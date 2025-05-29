@@ -50,14 +50,14 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun PrimaryDisplayContent() {
     // Display an image on the front display
-    Image(
-        painter = painterResource(id = R.drawable.slam_dunk), // Replace with your image resource
-        contentDescription = "Primary Display Image",
-        modifier = Modifier.fillMaxSize()
-    )
+//    Image(
+//        painter = painterResource(id = R.drawable.slam_dunk), // Replace with your image resource
+//        contentDescription = "Primary Display Image",
+//        modifier = Modifier.fillMaxSize()
+//    )
 
     // Display a video on the front display (uncomment to use)
-//    VideoPlayer(uri = "file:///android_asset/TrailMarker_00001.mp4")  // Replace with your video path
+    VideoPlayer(uri = "file:///android_asset/TrailMarker_00001.mp4")  // Replace with your video path
 }
 
 
@@ -69,7 +69,6 @@ fun VideoPlayer(uri: String) {
     // 1) Create (and remember) a single ExoPlayer instance for the lifetime of this composable:
     val exoPlayer = remember {
         ExoPlayer.Builder(context)
-            // you can customize the LoadControl here if you need bigger buffers:
             .setLoadControl(
                 DefaultLoadControl.Builder()
                 .setBufferDurationsMs(
@@ -81,7 +80,6 @@ fun VideoPlayer(uri: String) {
             )
             .build()
             .apply {
-                // <-- set repeat here
                 repeatMode = Player.REPEAT_MODE_ONE
             }
     }

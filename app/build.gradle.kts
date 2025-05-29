@@ -52,14 +52,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
+    androidTestImplementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.media3.exoplayer)
     implementation(libs.androidx.media3.exoplayer.dash)
     implementation(libs.androidx.media3.ui)
     implementation(libs.androidx.media3.ui.compose)
-    implementation("androidx.appcompat:appcompat:1.3.0-rc01")
 }

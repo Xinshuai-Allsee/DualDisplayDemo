@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.view.Display
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.Lifecycle
@@ -37,7 +37,6 @@ class SecondaryDisplayPresentation(
         val composeView = ComposeView(context).apply {
             setViewTreeLifecycleOwner(this@SecondaryDisplayPresentation)
             setViewTreeSavedStateRegistryOwner(this@SecondaryDisplayPresentation)
-
             setContent {
                 DualDisplayDemoTheme {
                     SecondaryDisplayContent()
@@ -73,12 +72,12 @@ class SecondaryDisplayPresentation(
 @Composable
 fun SecondaryDisplayContent() {
     // Display an image on the back display
-//    Image(
-//        painter = painterResource(id = R.drawable.back_display), // Replace with your image resource
-//        contentDescription = "Secondary Display Image",
-//        modifier = Modifier.fillMaxSize()
-//    )
+    Image(
+        painter = painterResource(id = R.drawable.back_display), // Replace with your image resource
+        contentDescription = "Secondary Display Image",
+        modifier = Modifier.fillMaxSize()
+    )
 
     // Display a video on the back display (uncomment to use)
-     VideoPlayer(uri = "file:///android_asset/TrailMarker_00001.mp4") // Replace with your video path
+//     VideoPlayer(uri = "file:///android_asset/TrailMarker_00001.mp4") // Replace with your video path
 }
